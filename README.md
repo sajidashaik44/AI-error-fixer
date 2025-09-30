@@ -269,8 +269,7 @@ MIT License - see [LICENSE](LICENSE) file for details
 ## Support
 
 - **Issues**: [GitHub Issues](https://github.com/sajidashaik44/ai-error-fixer/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/sajidashaik44/ai-error-fixer/discussions)
-- **Email**: support@example.com
+- **Email**: shaiksajida444@gmail.com
 
 ## Roadmap
 
