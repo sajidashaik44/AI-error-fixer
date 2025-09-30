@@ -14,7 +14,7 @@ A powerful VSCode extension that automatically detects and fixes Python errors u
 
 ## Demo
 
-![AI Error Fixer Demo](demo.webm)
+![AI Error Fixer Demo](demo/demo.webm)
 
 ## Requirements
 
