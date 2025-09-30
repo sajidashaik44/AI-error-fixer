@@ -1,0 +1,94 @@
+{
+  "name": "ai-error-fixer",
+  "displayName": "AI Error Fixer",
+  "description": "AI-powered error fixing for Python code",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:python"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "aiErrorFixer.fixError",
+        "title": "Fix Error with AI",
+        "category": "AI Error Fixer"
+      },
+      {
+        "command": "aiErrorFixer.toggleAutoFix",
+        "title": "Toggle Auto-Fix",
+        "category": "AI Error Fixer"
+      },
+      {
+        "command": "aiErrorFixer.test",
+        "title": "Test Extension",
+        "category": "AI Error Fixer"
+      },
+      {
+        "command": "aiErrorFixer.testAPI",
+        "title": "Test API Connection",
+        "category": "AI Error Fixer"
+      },
+      {
+        "command": "aiErrorFixer.testSmartPlacement",
+        "title": "Test Smart Placement",
+        "category": "AI Error Fixer"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "aiErrorFixer.fixError",
+        "key": "ctrl+shift+f",
+        "mac": "cmd+shift+f",
+        "when": "editorTextFocus && editorLangId == python"
+      },
+      {
+        "command": "aiErrorFixer.test",
+        "key": "ctrl+shift+t",
+        "mac": "cmd+shift+t",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "title": "AI Error Fixer",
+      "properties": {
+        "aiErrorFixer.autoFixEnabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable automatic error fixing"
+        },
+        "aiErrorFixer.minConfidence": {
+          "type": "number",
+          "default": 0.5,
+          "minimum": 0.1,
+          "maximum": 1.0,
+          "description": "Minimum confidence level for auto-applying fixes (0.1 to 1.0)"
+        },
+        "aiErrorFixer.apiUrl": {
+          "type": "string",
+          "default": "http://127.0.0.1:8000",
+          "description": "AI Error Fixer API URL"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "axios": "^1.6.0"
+  }
+}
