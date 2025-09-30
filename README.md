@@ -230,6 +230,11 @@ pytest tests/
 - Check VSCode output panel for error messages
 - Try manually copying the fix code
 
+**extension development host not opening in new window**
+- try opening extension folder in a new window
+- run npm run compile and code .
+- press Ctrl+f5 or Ctrl+Shift+f5 or Ctrl+Shift+P
+
 ## Performance
 
 - **Cache Hit Rate**: ~70-80% for common error patterns
@@ -282,7 +287,7 @@ MIT License - see [LICENSE](LICENSE) file for details
 
 ## Changelog
 
-### v1.0.0 (2024-09-30)
+### v1.0.0 (2025-09-30)
 - Initial release
 - Consolidated error fixing
 - Clean code output
