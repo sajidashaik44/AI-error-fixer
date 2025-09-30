@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  # AI Error Fixer API
+  api:
+    build: ./api
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - ai-fixer-network
+
+  # Ollama service (optional - for AI processing)
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+    networks:
+      - ai-fixer-network
+    # Note: You'll need to pull the codellama model manually:
+    # docker exec -it <container_name> ollama pull codellama:latest
+
+volumes:
+  ollama_data:
+
+networks:
+  ai-fixer-network:
+    driver: bridge
